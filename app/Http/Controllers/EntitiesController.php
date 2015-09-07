@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProcessesController extends Controller
+class EntitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,10 @@ class ProcessesController extends Controller
      */
     public function index()
     {
-        $processes = \App\Models\ProcessesModel::get();
-
+        $entities = \App\Models\EntitiesModel::get();
         return response()->json([
-            "processes" =>  $processes->toArray(),
-
-        ],200
+            "entities" =>  $entities->toArray(),
+           ],200
         );
     }
 

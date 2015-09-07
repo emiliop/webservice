@@ -4,21 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProcessesModel extends Model
+class EntitiesModel extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'processes';
+    protected $table = 'entities';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['long_name','short_name'];
 
     /**
      * The attributes excluded from the model's JSON form.
