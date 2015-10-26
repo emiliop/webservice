@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DatabaseController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,35 +14,10 @@ class DatabaseController extends Controller
      */
     public function index()
     {
-        $processes = \App\Models\ProcessesModel::get();
-        $entities = \App\Models\EntitiesModel::get();
-        $servicePoints = \App\Models\ServicePointsModel::get();
-
-        /*foreach ($processes as $process) {
-            $process->entity = explode( ',', $process->entity );
-            $process->pointsOfService = explode( ',', $process->pointsOfService );
-        }
-
-        foreach ($entities as $entity) {
-            $entity->processes = explode( ',', $entity->processes );
-            $entity->pointsOfService = explode( ',', $entity->pointsOfService );
-        }
-
-        foreach ($servicePoints as $servicePoint) {
-            $servicePoint->processes = explode( ',', $servicePoint->processes );
-        }
-        */
-        $processes->toArray();
-        $entities->toArray();
-        $servicePoints->toArray();
-
+        $categories = \App\Models\CategoriesModel::get();
         return response()->json([
-
-            "processes"=>$processes,
-            "entities"=>$entities,
-            "servicePoints"=>$servicePoints,
+            "categories" =>  $categories->toArray(),
         ],200
-
         );
     }
 

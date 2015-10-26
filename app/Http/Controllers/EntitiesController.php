@@ -14,10 +14,15 @@ class EntitiesController extends Controller
      */
     public function index()
     {
+
         $entities = \App\Models\EntitiesModel::get();
+        foreach ($entities as $entity) {
+            $entity->processes = explode( ',', $entity->processes );
+            $entity->pointsOfService = explode( ',', $entity->pointsOfService );
+        }
         return response()->json([
-            "entities" =>  $entities->toArray(),
-           ],200
+            "entities"=>$entities,
+        ],200
         );
     }
 

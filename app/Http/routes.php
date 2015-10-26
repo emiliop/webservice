@@ -42,6 +42,13 @@ Route::put("servicePoints/{id}","ServicePointsController@update");
 Route::delete("servicePoints/{id}","ServicePointsController@destroy");
 Route::get("servicePoints/data","ServicePointsController@index");
 
+Route::get("categories","CategoriesController@index");
+Route::get("categories/{id}","CategoriesController@show");
+Route::post("categories","CategoriesController@store");
+Route::put("categories/{id}","CategoriesController@update");
+Route::delete("categories/{id}","CategoriesController@destroy");
+Route::get("categories/data","CategoriesController@index");
+
 Route::get("database","DatabaseController@index");
 Route::get("database/{id}","DatabaseController@show");
 Route::post("database","DatabaseController@store");
