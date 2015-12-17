@@ -55,3 +55,17 @@ Route::post("database","DatabaseController@store");
 Route::put("database/{id}","DatabaseController@update");
 Route::delete("database/{id}","DatabaseController@destroy");
 Route::get("database/data","DatabaseController@index");
+
+Route::get("tickets","TicketsController@index");
+Route::get("tickets/{id}","TicketsController@show");
+Route::post("tickets","TicketsController@store");
+Route::put("tickets/{id}","TicketsController@update");
+Route::delete("tickets/{id}","TicketsController@destroy");
+Route::get("tickets/data","TicketsController@index");
+
+Route::get("attentions","AttentionsController@index");
+Route::get("attentions/{id}","AttentionsController@show");
+Route::post("attentions","AttentionsController@store");
+Route::put("attentions/{id}","AttentionsController@update");
+Route::delete("attentions/{id}","AttentionsController@destroy");
+Route::get("attentions/data","AttentionsController@index");
